@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <import resource="messages.xml"/>
-    <import resource="announcers.xml" />
+    <bean id="frenchMessage" class="home.spring.ioc.exercises.first.FrenchMessage" />
 
+    <bean id="englishMessage" class="home.spring.ioc.exercises.first.EnglishMessage" />
 </beans>

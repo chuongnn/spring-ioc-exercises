@@ -5,6 +5,9 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <import resource="messages.xml"/>
-    <import resource="announcers.xml" />
 
+    <bean id="announcer" class="home.spring.ioc.exercises.first.MessageAnnouncer">
+        <property name="announcerName" value="ABC"/>
+        <property name="message" ref="englishMessage"/>
+    </bean>
 </beans>

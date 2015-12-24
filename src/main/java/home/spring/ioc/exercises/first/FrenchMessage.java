@@ -4,6 +4,6 @@ public class FrenchMessage implements Message {
 
     @Override
     public String getTextMessage() {
-        return "French";
+        return "French Message";
     }
 }

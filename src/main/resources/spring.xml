@@ -8,4 +8,8 @@
 
     <bean id="englishMessage" class="home.spring.ioc.exercises.first.EnglishMessage" />
 
+    <bean id="announcer" class="home.spring.ioc.exercises.first.MessageAnnouncer">
+        <property name="announcerName" value="ABC"/>
+        <property name="message" ref="englishMessage"/>
+    </bean>
 </beans>

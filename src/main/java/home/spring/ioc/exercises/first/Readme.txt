@@ -8,5 +8,4 @@ Problem:
 
 Explored features:
 - Container:
--- XML based metadata.
--- Instantiate bean.
+-- Instantiate, configure and wire bean.

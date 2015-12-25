@@ -30,12 +30,14 @@
     </bean>
 
     <bean id="forthCustomizedMessage" factory-bean="messageFactory" factory-method="createCustomisedMessage">
-        <constructor-arg ref="defaultMessage"/>
+        <constructor-arg>
+            <idref bean="defaultMessage"/>
+        </constructor-arg>
     </bean>
 
     <bean id="fifthCustomizedMessage" class="home.spring.ioc.exercises.first.CustomizedMessage"
           p:textMessage="hah hah"/>
 
-    <alias name="fifthCustomizedMessage" alias="customizedMessage"/>
+    <alias name="forthCustomizedMessage" alias="customizedMessage"/>
     <alias name="customizedMessage" alias="publishedMessage"/>
 </beans>

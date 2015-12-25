@@ -19,8 +19,15 @@ public class CustomizedMessage implements Message {
         }
     }
 
+    public CustomizedMessage() {
+    }
+
     @Override
     public String getTextMessage() {
         return this.textMessage;
+    }
+
+    public void setTextMessage(String textMessage) {
+        this.textMessage = textMessage;
     }
 }

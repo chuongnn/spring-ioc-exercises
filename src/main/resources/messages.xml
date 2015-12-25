@@ -32,6 +32,10 @@
         <constructor-arg ref="defaultMessage"/>
     </bean>
 
-    <alias name="forthCustomizedMessage" alias="customizedMessage"/>
+    <bean id="fifthCustomizedMessage" class="home.spring.ioc.exercises.first.CustomizedMessage">
+        <property name="textMessage" value="hah hah"/>
+    </bean>
+
+    <alias name="fifthCustomizedMessage" alias="customizedMessage"/>
     <alias name="customizedMessage" alias="publishedMessage"/>
 </beans>

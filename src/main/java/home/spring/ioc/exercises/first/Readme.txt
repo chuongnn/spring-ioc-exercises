@@ -8,4 +8,4 @@ Problem:
 
 Explored features:
 - Bean:
--- Constructor injection with ref, value, type and index;
+-- Setter injection;

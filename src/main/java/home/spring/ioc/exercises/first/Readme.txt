@@ -8,4 +8,4 @@ Problem:
 
 Explored features:
 - Bean:
--- Setter injection;
+-- Setter injection with p schema;

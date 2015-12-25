@@ -7,4 +7,6 @@
     <bean id="frenchMessage" class="home.spring.ioc.exercises.first.FrenchMessage" />
 
     <bean id="englishMessage" class="home.spring.ioc.exercises.first.EnglishMessage" />
+
+    <alias name="frenchMessage" alias="publishedMessage"/>
 </beans>

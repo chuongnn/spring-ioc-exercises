@@ -1,5 +1,7 @@
 package home.spring.ioc.exercises.first;
 
+import java.util.List;
+
 public class CustomizedMessage implements Message {
 
     private String textMessage;
@@ -16,6 +18,13 @@ public class CustomizedMessage implements Message {
         this.textMessage = "";
         for (int i = 0; i < loopCount; i++) {
             this.textMessage = String.format("%s %s", this.textMessage, message);
+        }
+    }
+
+    public CustomizedMessage(List<String> messages) {
+        this.textMessage = "";
+        for (int i = 0; i < messages.size(); i++) {
+            this.textMessage = String.format("%s %s", this.textMessage, messages.get(i));
         }
     }
 

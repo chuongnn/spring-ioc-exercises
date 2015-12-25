@@ -1,5 +1,7 @@
 package home.spring.ioc.exercises.first;
 
+import java.util.List;
+
 public class MessageFactory {
 
     public Message createEnglishMessage() {
@@ -20,5 +22,9 @@ public class MessageFactory {
 
     public Message createCustomisedMessage(String message, int loopCount) {
         return new CustomizedMessage(message, loopCount);
+    }
+
+    public Message createCustomisedMessage(List<String> messages) {
+        return new CustomizedMessage(messages);
     }
 }

@@ -4,12 +4,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <import resource="messages.xml"/>
+
     <bean id="announcer" class="home.spring.ioc.exercises.first.MessageAnnouncer">
         <property name="announcerName" value="ABC"/>
-        <property name="message">
-            <bean class="home.spring.ioc.exercises.first.CustomizedMessage">
-                <constructor-arg value="home built message" index="0"/>
-            </bean>
-        </property>
+        <property name="message" ref="publishedMessage"/>
     </bean>
 </beans>

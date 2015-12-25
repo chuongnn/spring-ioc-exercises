@@ -6,9 +6,8 @@
 
     <import resource="messages.xml"/>
 
-    <alias name="publishedMessage" alias="message"/>
-
-    <bean id="announcer" class="home.spring.ioc.exercises.first.MessageAnnouncer" autowire="byName">
+    <bean id="announcer" class="home.spring.ioc.exercises.first.MessageAnnouncer">
         <property name="announcerName" value="ABC"/>
+        <property name="message" ref="publishedMessage"/>
     </bean>
 </beans>

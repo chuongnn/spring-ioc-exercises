@@ -27,4 +27,8 @@ public class MessageFactory {
     public Message createCustomisedMessage(List<String> messages) {
         return new CustomizedMessage(messages);
     }
+
+    public Message createTimedMessage() {
+        return new CustomizedMessage(String.valueOf(System.currentTimeMillis()));
+    }
 }

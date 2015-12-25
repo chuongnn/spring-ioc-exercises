@@ -51,6 +51,9 @@
         </constructor-arg>
     </bean>
 
+    <bean id="timedMessage" factory-bean="messageFactory" factory-method="createTimedMessage" scope="prototype" />
+
     <alias name="sixthCustomizedMessage" alias="customizedMessage"/>
     <alias name="customizedMessage" alias="publishedMessage"/>
+    <alias name="timedMessage" alias="publishedTimedMessage"/>
 </beans>

@@ -10,4 +10,8 @@
         <property name="announcerName" value="ABC"/>
         <property name="message" ref="publishedMessage"/>
     </bean>
+
+    <bean id="timedAnnouncer" class="home.spring.ioc.exercises.first.TimedMessageAnnouncer">
+        <lookup-method name="getTimedMessage" bean="publishedTimedMessage"/>
+    </bean>
 </beans>

@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/util
-        http://www.springframework.org/schema/util/spring-util.xsd">
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="messageFactory" class="home.spring.ioc.exercises.first.MessageFactory"/>
 
@@ -14,46 +10,13 @@
 
     <bean id="englishMessage" factory-bean="messageFactory" factory-method="createEnglishMessage"/>
 
-    <bean id="defaultMessage" class="java.lang.String">
-        <constructor-arg value="Default Message"/>
-    </bean>
-
     <bean id="firstCustomizedMessage" factory-bean="messageFactory" factory-method="createCustomisedMessage">
         <constructor-arg value="Customized Message"/>
     </bean>
 
-    <bean id="secondCustomizedMessage" factory-bean="messageFactory" factory-method="createCustomisedMessage">
-        <constructor-arg index="0" value="I"/>
-        <constructor-arg index="1" value="am working"/>
-    </bean>
-
-    <bean id="thirdCustomizedMessage" factory-bean="messageFactory" factory-method="createCustomisedMessage">
-        <constructor-arg type="java.lang.String" value="Hah"/>
-        <constructor-arg type="int" value="3"/>
-    </bean>
-
-    <bean id="forthCustomizedMessage" factory-bean="messageFactory" factory-method="createCustomisedMessage">
-        <constructor-arg>
-            <idref bean="defaultMessage"/>
-        </constructor-arg>
-    </bean>
-
-    <bean id="fifthCustomizedMessage" class="home.spring.ioc.exercises.first.CustomizedMessage"
-          p:textMessage="hah hah"/>
-
-    <bean id="sixthCustomizedMessage" factory-bean="messageFactory" factory-method="createCustomisedMessage">
-        <constructor-arg type="java.util.List">
-            <util:list list-class="java.util.ArrayList" value-type="java.lang.String">
-                <value>First</value>
-                <value>Second</value>
-                <value>Third</value>
-            </util:list>
-        </constructor-arg>
-    </bean>
-
     <bean id="timedMessage" factory-bean="messageFactory" factory-method="createTimedMessage" scope="prototype" />
 
-    <alias name="sixthCustomizedMessage" alias="customizedMessage"/>
+    <alias name="firstCustomizedMessage" alias="customizedMessage"/>
     <alias name="customizedMessage" alias="publishedMessage"/>
     <alias name="timedMessage" alias="publishedTimedMessage"/>
 </beans>

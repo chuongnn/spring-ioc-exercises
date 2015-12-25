@@ -8,4 +8,4 @@ Problem:
 
 Explored features:
 - Bean:
--- Instantiate via instance factory method with constructor parameter;
+-- Constructor injection with ref, value, type and index;

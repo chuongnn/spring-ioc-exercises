@@ -10,9 +10,28 @@
 
     <bean id="englishMessage" factory-bean="messageFactory" factory-method="createEnglishMessage"/>
 
-    <bean id="customizedMessage" factory-bean="messageFactory" factory-method="createCustomisedMessage">
+    <bean id="defaultMessage" class="java.lang.String">
+        <constructor-arg value="Default Message"/>
+    </bean>
+
+    <bean id="firstCustomizedMessage" factory-bean="messageFactory" factory-method="createCustomisedMessage">
         <constructor-arg value="Customized Message"/>
     </bean>
 
+    <bean id="secondCustomizedMessage" factory-bean="messageFactory" factory-method="createCustomisedMessage">
+        <constructor-arg index="0" value="I"/>
+        <constructor-arg index="1" value="am working"/>
+    </bean>
+
+    <bean id="thirdCustomizedMessage" factory-bean="messageFactory" factory-method="createCustomisedMessage">
+        <constructor-arg type="java.lang.String" value="Hah"/>
+        <constructor-arg type="int" value="3"/>
+    </bean>
+
+    <bean id="forthCustomizedMessage" factory-bean="messageFactory" factory-method="createCustomisedMessage">
+        <constructor-arg ref="defaultMessage"/>
+    </bean>
+
+    <alias name="forthCustomizedMessage" alias="customizedMessage"/>
     <alias name="customizedMessage" alias="publishedMessage"/>
 </beans>

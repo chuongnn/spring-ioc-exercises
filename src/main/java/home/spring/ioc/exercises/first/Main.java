@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("first/spring.xml");
 
         Announcer announcer = context.getBean("announcer", Announcer.class);
         Announcer timedAnnouncer =context.getBean("timedAnnouncer", Announcer.class);

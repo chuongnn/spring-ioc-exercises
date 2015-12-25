@@ -2,11 +2,15 @@ package home.spring.ioc.exercises.first;
 
 public class MessageFactory {
 
-    public static Message createEnglishMessage() {
+    public Message createEnglishMessage() {
         return new EnglishMessage();
     }
 
-    public static Message createFrenchMessage() {
+    public Message createFrenchMessage() {
         return new FrenchMessage();
+    }
+
+    public Message createCustomisedMessage(String textMessage) {
+        return new CustomizedMessage(textMessage);
     }
 }

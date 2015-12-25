@@ -8,4 +8,4 @@ Problem:
 
 Explored features:
 - Bean:
--- Instantiate via static factory method.
+-- Instantiate via instance factory method with constructor parameter;

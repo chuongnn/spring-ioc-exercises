@@ -4,11 +4,15 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="frenchMessage" class="home.spring.ioc.exercises.first.MessageFactory"
-          factory-method="createFrenchMessage"/>
+    <bean id="messageFactory" class="home.spring.ioc.exercises.first.MessageFactory"/>
 
-    <bean id="englishMessage" class="home.spring.ioc.exercises.first.MessageFactory"
-          factory-method="createEnglishMessage"/>
+    <bean id="frenchMessage" factory-bean="messageFactory" factory-method="createFrenchMessage"/>
 
-    <alias name="frenchMessage" alias="publishedMessage"/>
+    <bean id="englishMessage" factory-bean="messageFactory" factory-method="createEnglishMessage"/>
+
+    <bean id="customizedMessage" factory-bean="messageFactory" factory-method="createCustomisedMessage">
+        <constructor-arg value="Customized Message"/>
+    </bean>
+
+    <alias name="customizedMessage" alias="publishedMessage"/>
 </beans>

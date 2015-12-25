@@ -7,5 +7,5 @@ Problem:
 - Print different messages base on configuration.
 
 Explored features:
-- Container:
--- Instantiate, configure and wire bean.
+- Bean:
+-- Instantiate via static factory method.

@@ -4,9 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="frenchMessage" class="home.spring.ioc.exercises.first.FrenchMessage" />
+    <bean id="frenchMessage" class="home.spring.ioc.exercises.first.MessageFactory"
+          factory-method="createFrenchMessage"/>
 
-    <bean id="englishMessage" class="home.spring.ioc.exercises.first.EnglishMessage" />
+    <bean id="englishMessage" class="home.spring.ioc.exercises.first.MessageFactory"
+          factory-method="createEnglishMessage"/>
 
     <alias name="frenchMessage" alias="publishedMessage"/>
 </beans>

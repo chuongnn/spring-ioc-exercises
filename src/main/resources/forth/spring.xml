@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress InjectionValueTypeInspection -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="databaseManager" class="home.spring.ioc.exercises.fourth.DatabaseManager"/>
+
+    <bean id="DAOTemplate" abstract="true">
+        <property name="databaseManager" ref="databaseManager"/>
+    </bean>
+
+    <bean id="userDAO" class="home.spring.ioc.exercises.fourth.UserDAO" parent="DAOTemplate" scope="prototype"/>
+
+    <bean id="storeDAO" class="home.spring.ioc.exercises.fourth.StoreDAO" parent="DAOTemplate" scope="prototype"/>
+
+    <bean id="application" class="home.spring.ioc.exercises.fourth.Application">
+        <property name="employee" ref="userDAO"/>
+        <property name="employer" ref="userDAO"/>
+        <property name="bookStore" ref="storeDAO"/>
+        <property name="computerStore" ref="storeDAO"/>
+    </bean>
+</beans>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="databaseManager" class="home.spring.ioc.exercises.third.DatabaseManager">
+        <constructor-arg index="0">
+            <util:constant static-field="java.lang.Integer.MIN_VALUE"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="cacheManager" class="home.spring.ioc.exercises.third.CacheManager">
+        <constructor-arg index="0" type="int">
+            <value>-2</value>
+        </constructor-arg>
+        <constructor-arg index="1" type="home.spring.ioc.exercises.third.DatabaseManager" ref="databaseManager"/>
+    </bean>
+
+    <bean id="messagingManager" class="home.spring.ioc.exercises.third.MessagingManager">
+        <constructor-arg index="0" type="int">
+            <value>-1</value>
+        </constructor-arg>
+        <constructor-arg index="1" type="home.spring.ioc.exercises.third.CacheManager" ref="cacheManager"/>
+        <constructor-arg index="2" type="home.spring.ioc.exercises.third.DatabaseManager" ref="databaseManager"/>
+    </bean>
+
+    <bean id="application" class="home.spring.ioc.exercises.third.Application">
+        <constructor-arg index="0" type="int">
+            <value>0</value>
+        </constructor-arg>
+        <constructor-arg index="1" type="home.spring.ioc.exercises.third.MessagingManager" ref="messagingManager"/>
+        <constructor-arg index="2" type="home.spring.ioc.exercises.third.CacheManager" ref="cacheManager"/>
+        <constructor-arg index="3" type="home.spring.ioc.exercises.third.DatabaseManager" ref="databaseManager"/>
+    </bean>
+</beans>

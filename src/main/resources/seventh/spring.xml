@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="seventh/employee.properties" />
+
+    <bean id="employee-1" class="home.spring.ioc.exercises.seventh.Employee" scope="prototype">
+        <property name="name" value="${employee-1.name}"/>
+        <property name="email" value="${employee-1.email}"/>
+        <property name="job" value="${employee-1.job}"/>
+        <property name="department" value="${employee-1.department}"/>
+        <property name="salary" value="${employee-1.salary}"/>
+    </bean>
+
+    <bean id="employee-2" class="home.spring.ioc.exercises.seventh.Employee" scope="prototype">
+        <property name="name" value="${employee-2.name}"/>
+        <property name="email" value="${employee-2.email}"/>
+        <property name="job" value="${employee-2.job}"/>
+        <property name="department" value="${employee-2.department}"/>
+        <property name="salary" value="${employee-2.salary}"/>
+    </bean>
+</beans>

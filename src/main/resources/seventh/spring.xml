@@ -6,12 +6,14 @@
 
     <bean id="propertyPlaceholderConfigurer"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-
-        <property name="location" value="classpath:seventh/employee.properties"/>
+        <property name="location" value="classpath:seventh/employee-default.properties"/>
         <property name="systemPropertiesMode" value="0"/>
 
     </bean>
 
+    <bean id="propertyOverrideConfigurer" class="org.springframework.beans.factory.config.PropertyOverrideConfigurer">
+        <property name="location" value="classpath:seventh/employee.properties"/>
+    </bean>
     <bean id="employee-1" class="home.spring.ioc.exercises.seventh.Employee" scope="prototype">
         <property name="name" value="${employee-1.name}"/>
         <property name="email" value="${employee-1.email}"/>
